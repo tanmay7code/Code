@@ -1,2 +1,39 @@
 # Code
 This repository contains MATLAB and Python code developed for the study titled: "Multi-objective closed-loop supply chain inventory model with learning and forgetting under carbon emission policies using NSGA-II, MOPSO, and TOPSIS" submitted to Applied Soft Computing. 
+Description of the files and how to use the code
+## Contents
+#Matlab
+-nsga2_model1_CT.m ( Carbon tax policy)
+-nsga2_model2_CCO.m ( Carbon cap and offset policy)
+-nsga2_model3_CCT.m( Carbon cap and trade policy)
+-mopso_model1_CT.m (Carbon tax policy)
+-mopso_model2_CCO.m  ( Carbon cap and offset policy)
+-mopso_model3_CCT.m ( Carbon cap and trade policy)
+-topsis.m (choose the best solution from pareto front)
+-skill_level.m (calculation for skill level for the next cycle)
+#Python
+-hyper_volume (calculate the hypervolume from pareto front using Pymoo package)
+-pareto_front.csv
+## Requirements
+- MATLAB R2022b or later 
+- Optimization Toolbox
+- PYTHON 3.12 or later 
+-Pymoo package
+
+## How to Run
+1. Open the corresponding MATLAB script file based on the selected carbon emissions policy (for either NSGA-II or MOPSO).
+2. Run the script to load the sample input data and execute the optimization algorithm.
+3. For **NSGA-II**:
+   - The output objective values will be saved in the workspace folders `fp1` (first objective) and `fp2` (second objective).
+4. For **MOPSO**:
+   - The output objective values will be saved in the workspace folders `f1` (first objective) and `f2` (second objective).
+5. Plot the Pareto fronts over five consecutive cycles using the values from the first and second objectives.
+6. Save the resulting Pareto front data into a file named `pareto_front.csv`.
+7. Run the Python script `hyper_volume.py` to compute the hypervolume metric from the saved `pareto_front.csv`.
+8. To select the best solution from the Pareto front, open and run the `topsis.m` file in MATLAB, providing it with the objective values as input.
+
+
+### Optional:
+You may change parameters within to test different scenarios or datasets.
+
+
